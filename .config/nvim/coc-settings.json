@@ -1,0 +1,80 @@
+{
+  "coc.preferences.hoverTarget": "float",
+  "coc.preferences.enableFloatHighlight": false,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "go",
+    "markdown",
+    "javascript",
+    "typescript",
+    "json",
+    "python",
+    "jsonc"
+  ],
+  "coc.source.file.ignoreHidden": false,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.eslintIntegration": true,
+  "codeLens.enable": true,
+  "signature.target": "echo",
+  "diagnostic.format": "%message [%source]",
+  "diagnostic.virtualText": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.separateRelatedInformationAsDiagnostics": true,
+  "diagnostic.displayByAle": false,
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "javascript.format.enabled": true,
+  "suggest.enablePreview": true /*added*/,
+  "suggest.timeout": 5000,
+  "suggest.asciiCharactersOnly": false,
+  "snippets.ultisnips.usePythonx": false,
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+  "highlight.colors.enable": false,
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "typescript", "javascriptreact"],
+  "python.formatting.provider": "black",
+  "calc.replaceOriginalExpression": false,
+  "markdownlint.config": {
+    "default": true,
+    "line-length": false
+  },
+  "clangd.semanticHighlighting": true,
+  "clangd.arguments": ["--background-index"],
+  "go.goplsOptions": {
+    "linksInHover": false,
+    "usePlaceholders": true,
+    "staticcheck": true
+  },
+  "languageserver": {
+    /* "ccls": { */
+    /*   "command": "ccls", */
+    /*   "filetypes": ["c", "cpp", "objc", "objcpp"], */
+    /*   "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"], */
+    /*   "initializationOptions": { */
+    /*     "cache": { */
+    /*       "directory": "/tmp/ccls" */
+    /*     }, */
+    /*     "highlight": { "lsRanges": true } */
+    /*   } */
+    /* }, */
+    /* "rust": { */
+    /*   "command": "rust-analyzer", */
+    /*   "trace.server": "verbose", */
+    /*   "filetypes": ["rust"], */
+    /*   "rootPatterns": ["Cargo.toml", ".git/"], */
+    /*   "progressOnInitialization": true */
+    /* }, */
+  }
+}

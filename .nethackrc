@@ -1,0 +1,233 @@
+## Edit this on the NAO website: https://alt.org/nethack/webconf/
+## or if in terminal, see https://alt.org/nethack/virus.txt
+
+## Also see https://nethackwiki.com/wiki/Options
+
+# Enable the curses interface
+OPTIONS=windowtype:curses
+
+OPTIONS=popup_dialog
+
+# Use the number keys to move instead of hjklyubn, 0 to disable
+OPTIONS=number_pad:0
+
+OPTIONS=splash_screen
+OPTIONS=windowborders:2
+
+
+# Permanent inventory window
+OPTIONS=perm_inv
+
+## Automatically dig if you are wielding a digging tool and moving
+## into a place that can be dug
+OPTIONS=autodig
+
+## Walking into a door attempts to open it
+OPTIONS=autoopen
+
+## Allow saving and loading bones files.
+OPTIONS=bones
+
+## Show out-of-sight areas of lit rooms
+OPTIONS=dark_room
+
+## Use inverse for pets
+OPTIONS=hilite_pet
+
+## Use inverse for piles of items
+OPTIONS=hilite_pile
+
+## How recalled messages (ctrl-p) are displayed.
+OPTIONS=msg_window:reversed
+
+# Patch to always show buc status (if known) for items.
+#OPTIONS=showbuc:true
+
+## Change symbols
+SYMBOLS=S_ghost:X
+SYMBOLS=S_boulder:0
+
+# Show time
+OPTIONS=time
+
+# Show experience points
+OPTIONS=showexp
+
+# Show more messages on ctrl-p
+OPTIONS=msghistory:250
+
+## Sort items by name. One of "none", "loot", or "full"
+OPTIONS=sortloot:full
+
+## Require explicit yes for some prompts
+OPTIONS=paranoid_confirmation:quit attack pray wand Were-change Remove
+
+## Colored menus. Regular expressions allowed.
+#
+OPTIONS=color
+
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline
+MENUCOLOR=" holding "=yellow&underline
+MENUCOLOR="Amulet of Yendor named"=magenta&underline                           
+MENUCOLOR="loadstone\|wand \(of\|called\) cancellation"=red&underline
+MENUCOLOR="Cleaver"=red&inverse
+
+# Autopickup settings
+OPTIONS=autopickup
+OPTIONS=pickup_types:$
+
+# Autopick exceptions
+# Individually-name the real Amulet right away, and you'll never fall for a fake
+AUTOPICKUP_EXCEPTION=">Amulet of Yendor$"
+AUTOPICKUP_EXCEPTION="<Amulet of Yendor named"
+
+# Avoid picking up loadstones
+AUTOPICKUP_EXCEPTION="> loadstone[^<]*$"
+AUTOPICKUP_EXCEPTION="<stone called luck"
+AUTOPICKUP_EXCEPTION="< luckstone"
+AUTOPICKUP_EXCEPTION="< touchstone"
+AUTOPICKUP_EXCEPTION="> rock[^<]*$"
+
+# #blind: glass/gems show up as gem, all else as stone.
+#AUTOPICKUP_EXCEPTION="> stone[^<]*$"
+
+# Avoid turning your scrolls of scare monster to dust
+AUTOPICKUP_EXCEPTION=">scroll of scare monster"
+AUTOPICKUP_EXCEPTION=">scroll called scare monster"
+
+# Pick up formally identified artifacts. Don't blast yourself to death with a cross-aligned one ¿ leave unidentified ones on the floor
+# this one doesn't work properly and picks up any lea"the"r armor etc..
+
+#AUTOPICKUP_EXCEPTION="<[^| ]the "
+
+# Things too good to miss
+AUTOPICKUP_EXCEPTION="<wand of wishing"
+AUTOPICKUP_EXCEPTION="<wand called wish"
+AUTOPICKUP_EXCEPTION="<wand of create monster"
+AUTOPICKUP_EXCEPTION="<wand of teleportation"
+AUTOPICKUP_EXCEPTION="<wand called tele"
+AUTOPICKUP_EXCEPTION="<wand of polymorph"
+AUTOPICKUP_EXCEPTION="<wand called poly"
+AUTOPICKUP_EXCEPTION="<wand of fire"
+AUTOPICKUP_EXCEPTION="<wand of lightning"
+AUTOPICKUP_EXCEPTION="<wand of death"
+AUTOPICKUP_EXCEPTION="<magic marker"
+AUTOPICKUP_EXCEPTION="< lamp"
+AUTOPICKUP_EXCEPTION="<amulet of life saving"
+AUTOPICKUP_EXCEPTION="<amulet called life"
+
+
+## Messagetypes
+
+## displacing pets. hide the message.
+MSGTYPE=hide "You swap places with your .*"
+
+## items on floor. don't repeat the message.
+MSGTYPE=norep "You see here a .*"
+MSGTYPE=norep "You see here an .*"
+
+# delayed instadeaths
+MSGTYPE=stop "The .* (grabs|swings itself around) you!"
+MSGTYPE=stop "You don't feel very well."
+MSGTYPE=stop "You are turning a little green."
+MSGTYPE=stop "Your limbs are getting oozy."
+MSGTYPE=stop "Your skin begins to peel away."
+MSGTYPE=stop "You are turning into a green slime."
+MSGTYPE=stop "You are slowing down."
+MSGTYPE=stop "Your limbs are stiffening."
+MSGTYPE=stop "It constricts your throat!"
+MSGTYPE=stop "You find it hard to breathe."
+MSGTYPE=stop "You're gasping for air."
+MSGTYPE=stop "Your blood is having trouble reaching your brain."
+MSGTYPE=stop "You can no longer breathe."
+MSGTYPE=stop "You're turning blue."
+MSGTYPE=stop "Your consciousness is fading."
+MSGTYPE=stop "You feel deathly sick."
+MSGTYPE=stop "You feel (much|even) worse."
+
+# Things that aren't dangerous by themselves but could kill you if you don't notice.
+MSGTYPE=stop "You fail to cast the spell correctly."
+MSGTYPE=stop "You see here a c(hi|o)ckatrice corpse." 
+MSGTYPE=stop "You are beginning to feel weak."
+
+# Lycanthropy can be a nuisance, and a quick way to die when you lose your armor..
+MSGTYPE=stop "You feel feverish."
+
+# Don't speed past wrest message when wresting
+MSGTYPE=stop "You wrest .*"
+
+# Don't miss advancing skills
+MSGTYPE=stop "You feel more confident .*"
+
+# Don't miss nymphs, the wizard etc stealing stuff from you.
+MSGTYPE=stop "The monkey tries to run away with your .*"
+MSGTYPE=stop ".* steals .*"
+MSGTYPE=stop ".* stole .*"
+MSGTYPE=stop ".* tries to .* but gives up"
+MSGTYPE=stop ".* let her take .*"
+
+# I have a tendency to walk into a door 10 times or so before I notice "This door is locked.".. 
+MSGTYPE=stop "This door is locked."
+
+# Don't miss the vibrating square
+MSGTYPE=stop "You feel a strange vibration under your *."
+MSGTYPE=stop "You feel a strange vibration beneath you."
+
+# Avoid hitting friendlies when being stunned by stuff..
+MSGTYPE=stop ".* KABOOM!! .*"
+## Use status hilites
+#
+OPTIONS=statushilites
+
+# HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/grey&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+
+## Pw
+OPTIONS=hilite_status:power/100%/grey&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+
+# Str, Con, Dex, Int, Wis, Cha
+OPTIONS=hilite_status:characteristics/up/green/down/red
+
+# Gold
+OPTIONS=hilite_status: gold/up/yellow/down/brown
+
+# Pet
+OPTIONS=pettype:dog
+OPTIONS=catname:Crimefighter
+OPTIONS=dogname:Crimefighter
+OPTIONS=horsename:Crimefighter
+
+# Turn of animation for magic resists, for the love of the Flying Spaghetti Monster, not setting this to off will
+# turn you insane, incontinent and possibly bald when you enter the plane of fire.
+OPTIONS=!sparkle

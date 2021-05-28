@@ -1,0 +1,5 @@
+#rofi.theme: /usr/share/rofi/themes/Monokai.rasi
+rofi.theme: ~/.config/rofi/nord.rasi
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    alacritty -e ssh {host}
+
