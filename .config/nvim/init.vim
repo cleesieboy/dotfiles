@@ -126,6 +126,9 @@ Plug 'yggdroot/indentLine'
 " Surround actions, must have
 Plug 'tpope/vim-surround'
 
+" git support
+Plug 'tpope/vim-fugitive'
+
 " visually highlight yanked area
 Plug 'machakann/vim-highlightedyank'
 

@@ -137,6 +137,3 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# display random (-s short) fortune cookies
-#echo ''
-#fortune -s
