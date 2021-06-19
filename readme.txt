@@ -12,3 +12,9 @@ external requirements
 - lsd       (https://github.com/Peltoche/lsd)
 - ripgrep
 - qutebrowser
+
+oh-my-zsh plugins
+autosuggestions
+  256
+  syntax-hightlight
+  autopair
